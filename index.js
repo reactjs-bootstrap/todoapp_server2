@@ -19,9 +19,9 @@ mongoose
   .catch((err) => console.log(err));
 
 app.get("/", async (req, res) => {
-  const user = await Users.find();
-  const result = await user.json();
-  res.send(result);
+  // const user = await Users.find();
+  // const result = await user.json();
+  res.send({ name: "Bhargav", surname: "Kachhadiya" });
 });
 
 app.get("/:id", async (req, res) => {
