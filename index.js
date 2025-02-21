@@ -10,8 +10,9 @@ app.use(cors());
 const url =
   "mongodb+srv://bhargavkachhadiya1988:12345@bhargav.cmoi6kt.mongodb.net/?retryWrites=true&w=majority&appName=bhargav";
 
+mongoose.set("strictQuery", true);
 mongoose
-  .connect(url, {})
+  .connect(url)
   .then(() => {
     console.log("Connected Successfully");
   })
@@ -48,6 +49,6 @@ app.delete("/:id", async (req, res) => {
   res.send(user);
 });
 
-app.listen(5006, () => {
-  console.log("Server is running on PORT NO : 5006");
+app.listen(5000, () => {
+  console.log("Server is running on PORT NO : 5000");
 });
