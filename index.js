@@ -20,7 +20,8 @@ mongoose
 
 app.get("/", async (req, res) => {
   const user = await Users.find();
-  res.send(user);
+  const result = await user.json();
+  res.send(result);
 });
 
 app.get("/:id", async (req, res) => {
