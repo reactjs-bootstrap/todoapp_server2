@@ -6,7 +6,7 @@ const cors = require("cors");
 const app = express();
 app.use(express.json());
 app.use(cors());
-// mongoose.connect("mongodb://localhost:27017/todoapp");
+// const url = "mongodb://localhost:27017/todoapp";
 const url =
   "mongodb+srv://bhargavkachhadiya1988:12345@bhargav.cmoi6kt.mongodb.net/?retryWrites=true&w=majority&appName=bhargav";
 
@@ -19,9 +19,9 @@ mongoose
   .catch((err) => console.log(err));
 
 app.get("/", async (req, res) => {
-  // const user = await Users.find();
+  const user = await Users.find();
   // const result = await user.json();
-  res.send({ name: "Bhargav", surname: "Kachhadiya" });
+  res.send(user);
 });
 
 app.get("/:id", async (req, res) => {
@@ -50,6 +50,6 @@ app.delete("/:id", async (req, res) => {
   res.send(user);
 });
 
-app.listen(5000, () => {
-  console.log("Server is running on PORT NO : 5000");
+app.listen(7000, () => {
+  console.log("Server is running on PORT NO : 7000");
 });
