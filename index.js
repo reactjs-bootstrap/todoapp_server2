@@ -28,7 +28,8 @@ app.get("/:id", async (req, res) => {
   // const reqId = req.params.id;
   // const user = await Users.findById({ _id: reqId });
   // res.send(user);
-  res.send("Hello World");
+  // console.log(res.params.id);
+  res.send(req.params.id);
 });
 
 app.post("/", async (req, res) => {
