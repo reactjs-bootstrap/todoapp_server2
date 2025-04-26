@@ -25,11 +25,11 @@ app.get("/", async (req, res) => {
 });
 
 app.get("/:id", async (req, res) => {
-  // const reqId = req.params.id;
-  // const user = await Users.findById({ _id: reqId });
-  // res.send(user);
+  const reqId = req.params.id;
+  const user = await Users.findOne({ _id: reqId });
+  res.send(user);
   // console.log(res.params.id);
-  res.send(req.params.id);
+  // res.send(req.params.id);
 });
 
 app.post("/", async (req, res) => {
