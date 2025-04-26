@@ -39,7 +39,7 @@ app.post("/", async (req, res) => {
 
 app.put("/:id", async (req, res) => {
   const reqId = req.params.id;
-  const user = await Users.findByIdAndUpdate(
+  const user = await Users.findOneAndUpdate(
     { _id: reqId },
     { name: req.body.name, email: req.body.email, age: req.body.age }
   );
